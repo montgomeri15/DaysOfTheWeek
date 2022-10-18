@@ -4,19 +4,16 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        var dayOfTheWeek= DayOTheWeek.MON;
+        var dayOfTheWeek= DayOTheWeek.TUE;
 
-        switch (dayOfTheWeek){
-            case MON:
-                System.out.println("Понеділок");
-                break;
-            case TUE:
-                System.out.println("Вівторок");
-                break;
-            default:
-                System.out.println("Інший день тижня");
-        }
+        String result = switch (dayOfTheWeek){
+            case MON -> "Понеділок";
+            case TUE, WED, THU, FRI -> {
+                System.out.println("Будній день, окрім понеділка");
+                yield "\t-- yield замінив у Java 13 break і повертає значення із блоку.";
+            }
+            default -> "Вихідний день";
+        };
+        System.out.println(result);
     }
-
-
 }
