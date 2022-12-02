@@ -1,5 +1,5 @@
 public class Main {
-    private static enum DayOTheWeek{
+    private enum DayOTheWeek{
         MON, TUE, WED, THU, FRI, SAT, SUN
     }
 
